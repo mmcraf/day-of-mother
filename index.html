@@ -5,24 +5,280 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>روز مادر مبارک</title>
     <style>
+        /* استایل برای صفحه اصلی */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            background-color: #fce4ec;
-            color: #880e4f;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #ffffff;
             margin: 0;
-            padding: 50px;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            animation: backgroundAnimation 7s infinite alternate;
         }
+
+        /* افکت انیمیشن برای پس‌زمینه */
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(to right, #ff7e5f, #feb47b);
+            }
+            100% {
+                background: linear-gradient(to right, #6a11cb, #2575fc);
+            }
+        }
+
+        /* استایل برای صفحه‌ی اولیه (صفحات 3، 2، 1) */
+        .intro-page {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            font-weight: bold;
+            color: #ffffff;
+            animation: showIntroPage 3s ease-in-out;
+            opacity: 0;
+        }
+
+        /* افکت انیمیشن برای نمایش صفحات معکوس */
+        @keyframes showIntroPage {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* استایل برای صفحه اصلی تبریک روز مادر */
+        .main-page {
+            display: none;
+            text-align: center;
+            position: relative;
+        }
+
         h1 {
-            font-size: 2.5em;
+            font-size: 5em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 165, 0, 0.6);
+            animation: bounce 2s infinite, glow 1.5s ease-in-out infinite alternate;
         }
+
+        /* افکت حرکت bounce */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* افکت درخشش برای عنوان */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 30px #ff6347;
+            }
+            100% {
+                text-shadow: 0 0 15px #ff6347, 0 0 25px #ff6347, 0 0 40px #ff6347;
+            }
+        }
+
         p {
-            font-size: 1.2em;
+            font-size: 2em;
+            line-height: 1.8;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.4);
+            margin: 30px 0;
+            animation: fadeIn 3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* استایل برای پیغام از طرف محمدرضا */
+        .from {
+            font-size: 2em;
+            font-style: italic;
+            color: #ffeb3b;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in 1s;
+        }
+
+        /* تزئینات گل‌ها و اشیاء متحرک */
+        .flower {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('https://img.icons8.com/ios/452/flower.png');
+            background-size: cover;
+            animation: floatFlower 10s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        /* حرکت گل‌ها در صفحه */
+        @keyframes floatFlower {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(300px, 300px);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(0, 0);
+                opacity: 0.7;
+            }
+        }
+
+        /* گل‌های کوچک اضافی */
+        .flower:nth-child(2) {
+            top: 5%;
+            left: 10%;
+            animation: floatFlower 8s ease-in-out infinite;
+        }
+
+        .flower:nth-child(3) {
+            top: 30%;
+            left: 40%;
+            animation: floatFlower 6s ease-in-out infinite;
+        }
+
+        .flower:nth-child(4) {
+            top: 60%;
+            left: 70%;
+            animation: floatFlower 10s ease-in-out infinite;
+        }
+
+        .flower:nth-child(5) {
+            top: 80%;
+            left: 90%;
+            animation: floatFlower 7s ease-in-out infinite;
+        }
+
+        /* اضافه کردن حرکت و انیمیشن به قلب‌ها */
+        .heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('https://img.icons8.com/ios/452/heart.png');
+            background-size: cover;
+            animation: floatHeart 6s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-200px, 200px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* استایل برای حرکت قلب‌ها */
+        .heart:nth-child(6) {
+            top: 20%;
+            left: 50%;
+        }
+
+        .heart:nth-child(7) {
+            top: 70%;
+            left: 30%;
+        }
+
+        /* استایل صفحه آماده‌اید؟ */
+        .ready-page {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ffffff;
+            animation: fadeIn 2s ease-in-out;
         }
     </style>
 </head>
 <body>
-    <h1>مادر عزیزم، روزت مبارک! 🌹</h1>
-    <p>تو بهترین مادر دنیا هستی! دوستت دارم ❤️</p>
+
+    <!-- صفحه نمایش معکوس -->
+    <div class="intro-page" id="intro">
+        <div id="page3">۳</div>
+        <div id="page2" style="display: none;">۲</div>
+        <div id="page1" style="display: none;">۱</div>
+    </div>
+
+    <!-- صفحه آماده‌اید؟ -->
+    <div class="ready-page" id="ready-page" style="display: none;">
+        آمــاده‌ایــد؟
+    </div>
+
+    <!-- صفحه اصلی تبریک روز مادر -->
+    <div class="main-page" id="main-page" style="display: none;">
+        <h1>مادر عزیزم، روزت مبارک! 🌹</h1>
+        <p>تو بهترین مادر دنیا هستی! دوستت دارم ❤️</p>
+        <div class="from">
+            از طرف پسرگلت محمدرضا
+        </div>
+    </div>
+
+    <!-- گل‌های متحرک در پس‌زمینه -->
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+
+    <!-- قلب‌های متحرک در پس‌زمینه -->
+    <div class="heart"></div>
+    <div class="heart"></div>
+
+    <!-- صدای پس‌زمینه -->
+    <audio id="bg-audio" autoplay loop>
+        <source src="mothersong.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        // نمایش صفحات به ترتیب معکوس
+        let page3 = document.getElementById("page3");
+        let page2 = document.getElementById("page2");
+        let page1 = document.getElementById("page1");
+        let readyPage = document.getElementById("ready-page");
+        let mainPage = document.getElementById("main-page");
+        let intro = document.getElementById("intro");
+
+        setTimeout(() => {
+            page3.style.display = "none";
+            page2.style.display = "block";
+        }, 2000);  // نمایش صفحه ۲ بعد از 1 ثانیه
+
+        setTimeout(() => {
+            page2.style.display = "none";
+            page1.style.display = "block";
+        }, 3000);  // نمایش صفحه ۱ بعد از 2 ثانیه
+
+        setTimeout(() => {
+            intro.style.display = "none";  // مخفی کردن صفحات معکوس
+            readyPage.style.display = "block";  // نمایش صفحه آماده‌اید؟
+        }, 4000);  // نمایش صفحه آماده‌اید؟ بعد از 3 ثانیه
+
+        setTimeout(() => {
+            readyPage.style.display = "none";  // مخفی کردن صفحه آماده‌اید؟
+            mainPage.style.display = "block";  // نمایش صفحه تبریک
+        }, 6000);  // نمایش صفحه اصلی بعد از 2 ثانیه
+    </script>
 </body>
 </html>
